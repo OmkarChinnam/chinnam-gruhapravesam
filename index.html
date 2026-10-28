@@ -154,6 +154,68 @@
 }
 @media(max-width:360px){#gallery .story-gallery{gap:8px}#gallery .story-gallery .photo-caption{font-size:11px}}
 
+
+/* Gallery refinement: show each home glimpse in a calm vertical sequence */
+#gallery .story-gallery{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:28px;
+  width:100%;
+  max-width:760px;
+  margin:0 auto;
+}
+#gallery .story-gallery .photo,
+#gallery .story-gallery .main-photo,
+#gallery .story-gallery .story-photo{
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  height:auto;
+  min-height:0;
+  aspect-ratio:auto;
+  grid-column:auto;
+  position:relative;
+  overflow:hidden;
+  border-radius:12px;
+  background:#fffaf1;
+}
+#gallery .story-gallery .photo img,
+#gallery .story-gallery .main-photo img,
+#gallery .story-gallery .story-photo img{
+  position:static;
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:none;
+  aspect-ratio:auto;
+  object-fit:contain;
+  object-position:center;
+  background:#f7efe2;
+  transition:none;
+}
+#gallery .story-gallery .photo:hover img{transform:none}
+#gallery .story-gallery .photo-caption{
+  position:static;
+  inset:auto;
+  padding:15px 18px 17px;
+  color:var(--wine);
+  background:#fffaf1;
+  text-align:center;
+  font-size:16px;
+  line-height:1.45;
+}
+#gallery .story-gallery .photo-caption small{
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.5;
+}
+@media(max-width:760px){
+  #gallery .story-gallery{gap:20px;max-width:520px}
+  #gallery .story-gallery .photo-caption{padding:13px 12px 15px;font-size:14px}
+  #gallery .story-gallery .photo-caption small{font-size:11px}
+}
+
 </style>
 
 </head>
@@ -202,7 +264,7 @@
 
  <div class="welcome">Please join the <strong>Chinnam Family</strong> as we celebrate the auspicious beginning in our new home. Your presence will make this special day even more meaningful.<div class="telugu">శుభమస్తు! మా ఇంటి గృహప్రవేశ వేడుకలో పాల్గొని, మమ్మల్ని ఆశీర్వదించండి.</div></div>
 
- <div class="details"><article class="detail glass"><img class="detail-art" src="date-icon.png" alt="" loading="lazy"><h3>Auspicious Day</h3><p>Friday<br>20 November 2026</p></article><article class="detail glass"><img class="detail-art" src="time-icon.png" alt="" loading="lazy"><h3>Ceremony Time</h3><p>4:00 AM<br></p></article><article class="detail glass"><img class="detail-art" src="venue-icon.png" alt="" loading="lazy"><h3>Our New Home</h3><p>Levonor Northeast Apartments<br>Tejaswi Nagar Colony<br>Attapur, Hyderabad</p></article></div>
+ <div class="details"><article class="detail glass"><img class="detail-art" src="date-icon.png" alt="" loading="lazy"><h3>Auspicious Day</h3><p>Friday<br>20 November 2026</p></article><article class="detail glass"><img class="detail-art" src="time-icon.png" alt="" loading="lazy"><h3>Ceremony Time</h3><p>4:00<br>AM</p></article><article class="detail glass"><img class="detail-art" src="venue-icon.png" alt="" loading="lazy"><h3>Our New Home</h3><p>Levonor Northeast Apartments<br>Tejaswi Nagar Colony<br>Attapur, Hyderabad</p></article></div>
 
  </div></section>
 
@@ -214,7 +276,7 @@
 
  <div class="gallery story-gallery">
   <figure class="photo main-photo">
-    <picture><source media="(max-width:760px)" srcset="home-portrait.png"><img src="our-new-home.jpg" alt="Warmly lit entrance to the Chinnam Family’s new home" loading="lazy" width="1600" height="900"></picture>
+    <img src="home-portrait.png" alt="Warmly lit entrance to the Chinnam Family’s new home" loading="lazy" width="900" height="1600">
     <figcaption class="photo-caption"><strong>Our New Home</strong><small>Levonor Northeast Apartments</small></figcaption>
   </figure>
   <figure class="photo story-photo">
