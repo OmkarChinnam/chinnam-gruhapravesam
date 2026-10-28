@@ -136,6 +136,24 @@
 
 
 
+
+/* Final gallery alignment: equal cards, aligned in one row on desktop */
+#gallery .story-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
+#gallery .story-gallery .photo{grid-column:auto;aspect-ratio:4/5;min-width:0;min-height:0;height:auto;margin:0;position:relative}
+#gallery .story-gallery .main-photo{grid-column:auto;aspect-ratio:4/5;min-height:0}
+#gallery .story-gallery .photo picture{display:block;position:absolute;inset:0;width:100%;height:100%}
+#gallery .story-gallery .photo img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;background:#fffaf1;transition:transform .35s}
+#gallery .story-gallery .photo.main-photo img{object-fit:cover}
+#gallery .story-gallery .photo-caption{z-index:2;padding:36px 12px 12px;font-size:14px}
+@media(max-width:760px){
+ #gallery .story-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ #gallery .story-gallery .photo,#gallery .story-gallery .main-photo,#gallery .story-gallery .story-photo{grid-column:auto;aspect-ratio:3/4;min-height:0}
+ #gallery .story-gallery .photo.main-photo img{object-fit:cover}
+ #gallery .story-gallery .photo-caption{padding:32px 9px 10px;font-size:12px}
+ #gallery .story-gallery .photo-caption small{font-size:9px;line-height:1.4}
+}
+@media(max-width:360px){#gallery .story-gallery{gap:8px}#gallery .story-gallery .photo-caption{font-size:11px}}
+
 </style>
 
 </head>
@@ -184,7 +202,7 @@
 
  <div class="welcome">Please join the <strong>Chinnam Family</strong> as we celebrate the auspicious beginning in our new home. Your presence will make this special day even more meaningful.<div class="telugu">శుభమస్తు! మా ఇంటి గృహప్రవేశ వేడుకలో పాల్గొని, మమ్మల్ని ఆశీర్వదించండి.</div></div>
 
- <div class="details"><article class="detail glass"><img class="detail-art" src="date-icon.png" alt="" loading="lazy"><h3>Auspicious Day</h3><p>Friday<br>20 November 2026</p></article><article class="detail glass"><img class="detail-art" src="time-icon.png" alt="" loading="lazy"><h3>Ceremony Time</h3><p>4:00<br>AM</p></article><article class="detail glass"><img class="detail-art" src="venue-icon.png" alt="" loading="lazy"><h3>Our New Home</h3><p>Levonor Northeast Apartments<br>Tejaswi Nagar Colony<br>Attapur, Hyderabad</p></article></div>
+ <div class="details"><article class="detail glass"><img class="detail-art" src="date-icon.png" alt="" loading="lazy"><h3>Auspicious Day</h3><p>Friday<br>20 November 2026</p></article><article class="detail glass"><img class="detail-art" src="time-icon.png" alt="" loading="lazy"><h3>Ceremony Time</h3><p>4:00 AM<br></p></article><article class="detail glass"><img class="detail-art" src="venue-icon.png" alt="" loading="lazy"><h3>Our New Home</h3><p>Levonor Northeast Apartments<br>Tejaswi Nagar Colony<br>Attapur, Hyderabad</p></article></div>
 
  </div></section>
 
@@ -194,15 +212,22 @@
 
 <section class="section" id="gallery"><div class="wrap"><div class="section-head"><div class="kicker">A little glimpse</div><h2>Our Home, Our Memories</h2><p>A glimpse of our new home, as we get ready for this auspicious beginning.</p></div>
 
- <div class="wrap"><div class="section-head"><div class="kicker">A little glimpse</div><h2>Our Home, Our Memories</h2><p>A glimpse of our new home, as we get ready for this auspicious beginning.</p></div>
- <div class="gallery story-gallery"><figure class="photo main-photo"><picture><source media="(max-width:760px)" srcset="home-portrait.png"><img src="our-new-home.jpg" alt="Warmly lit entrance to the Chinnam Family’s new home" loading="lazy"></picture><figcaption class="photo-caption"><strong>Our New Home</strong><small>Levonor Northeast Apartments</small></figcaption></figure>
-  
- <!-- <figure class="photo story-photo"><img src="our-new-home.jpg" alt="Traditional puja offerings and blessings" loading="lazy"><figcaption class="photo-caption"><strong>Family Blessings</strong><small>Prayers for peace and prosperity</small></figcaption></figure> -->
- <figure class="photo main-photo"><picture><source media="(max-width:760px)" srcset="Glimpse1.png"><img src="Glimpse1.png" alt="" loading="lazy"><figcaption class="photo-caption"><strong></strong><small></small></figcaption></figure>
- <!-- <figure class="photo story-photo"><picture><source media="(max-width:760px)" srcset="home-portrait.png"><img src="havan-ceremony.png" alt="Traditional havan ceremony setup" loading="lazy"><figcaption class="photo-caption"><strong>Gruhapravesam Puja</strong><small>Tradition, devotion and gratitude</small></figcaption></figure> -->
- <figure class="photo main-photo"><picture><source media="(max-width:760px)" srcset="Glimpse2.png"><img src="Glimpse2.png" alt="" loading="lazy"><figcaption class="photo-caption"><strong></strong><small></small></figcaption></figure></div></div></div></section>
+ <div class="gallery story-gallery">
+  <figure class="photo main-photo">
+    <picture><source media="(max-width:760px)" srcset="home-portrait.png"><img src="our-new-home.jpg" alt="Warmly lit entrance to the Chinnam Family’s new home" loading="lazy" width="1600" height="900"></picture>
+    <figcaption class="photo-caption"><strong>Our New Home</strong><small>Levonor Northeast Apartments</small></figcaption>
+  </figure>
+  <figure class="photo story-photo">
+    <img src="Glimpse1.png" alt="A glimpse of the traditional Gruhapravesam ceremony" loading="lazy" width="800" height="1200">
+    <figcaption class="photo-caption"><strong>Traditional Rituals</strong><small>Prayers for a blessed beginning</small></figcaption>
+  </figure>
+  <figure class="photo story-photo">
+    <img src="Glimpse2.png" alt="A glimpse of the family’s auspicious home ceremony" loading="lazy" width="800" height="1200">
+    <figcaption class="photo-caption"><strong>Family Blessings</strong><small>Tradition, gratitude and togetherness</small></figcaption>
+  </figure>
+</div></div></section>
 
-<section class="section paper" id="venue"><div class="wrap"><div class="section-head"><div class="kicker">Come celebrate with us</div><h2>Find Our Home</h2><p>We look forward to welcoming you.</p></div><div class="venue-grid"><article class="venue-card glass"><div class="symbol"><img class="detail-art" src="venue-icon.png" alt="" loading="lazy"></div><div class="kicker">Our venue</div><h3>Levonor Northeast Apartments</h3><p>Tejaswi Nagar Colony, Attapur<br>Hyderabad, Telangana</p><a class="btn" href="https://www\.google.com/maps/search/?api=1&amp;query=Levonor+Northeast+Apartments%2C+Tejaswi+Nagar+Colony%2C+Attapur%2C+Hyderabad" target="_blank" rel="noopener noreferrer">Open Google Maps ↗</a></article>
+<section class="section paper" id="venue"><div class="wrap"><div class="section-head"><div class="kicker">Come celebrate with us</div><h2>Find Our Home</h2><p>We look forward to welcoming you.</p></div><div class="venue-grid"><article class="venue-card glass"><div class="symbol"><img class="detail-art" src="venue-icon.png" alt="" loading="lazy"></div><div class="kicker">Our venue</div><h3>Levonor Northeast Apartments</h3><p>Tejaswi Nagar Colony, Attapur<br>Hyderabad, Telangana</p><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Levonor+Northeast+Apartments%2C+Tejaswi+Nagar+Colony%2C+Attapur%2C+Hyderabad" target="_blank" rel="noopener noreferrer">Open Google Maps ↗</a></article>
 
  <article class="venue-card glass"><div class="symbol">♡</div><div class="kicker">Your blessings mean a lot</div><h3>Please let us know</h3><p>We hope you can join us, or simply send your wishes for our new beginning.</p><a class="btn ghost" href="#rsvp">Respond to Invitation ↓</a></article></div></div></section>
 
@@ -216,7 +241,7 @@
 
 'use strict';
 
-// Count down to the start of the event date;&#x20;
+// Count down to the start of the event date in India.
 
 const eventDate = new Date('2026-11-20T00:00:00+05:30');
 
@@ -242,28 +267,18 @@ function updateCountdown(){
 
 updateCountdown();window.setInterval(updateCountdown,1000);
 
-// Configure each host's WhatsApp number below using country code + number, digits only.
-// Share these distinct invitation links with guests:
-// ?host=dad   (your dad's guests reply to your dad)
-// ?host=omkar (your guests reply to you)
-// ?host=sister (your sister's guests reply to your sister)
-const HOST_CONTACTS={
-  dad:{label:'your dad',phone:'+91 9100815988'},
-  omkar:{label:'you',phone:'91XXXXXXXXXX'},
-  sister:{label:'your sister',phone:'91XXXXXXXXXX'}
-};
-const hostKey=(new URLSearchParams(window.location.search).get('host')||'omkar').toLowerCase();
-const activeHost=HOST_CONTACTS[hostKey]||HOST_CONTACTS.omkar;
+// RSVP responses go to the single family WhatsApp number.
+// wa.me requires the country code, so 9100815988 becomes 919100815988 for India.
+const RSVP_WHATSAPP_NUMBER='919100815988';
 $('whatsappBtn').addEventListener('click',()=>{
   const name=$('guestName').value.trim();
   if(!name){$('guestName').setCustomValidity('Please enter your name.');$('guestName').reportValidity();$('guestName').focus();return;}
   $('guestName').setCustomValidity('');
-  const raw=Number($('guestCount').value||2);const count=Number.isFinite(raw)?Math.min(30,Math.max(1,Math.trunc(raw))):2;
+  const raw=Number($('guestCount').value||2);
+  const count=Number.isFinite(raw)?Math.min(30,Math.max(1,Math.trunc(raw))):2;
   const msg=`Namaste! I’m ${name}. Regarding the Chinnam Family Gruhapravesam on Friday, 20 November 2026, ${count} guest${count===1?'':'s'} will attend. Best wishes for your new home!`;
-  if(!/^\d{10,15}$/.test(activeHost.phone)||activeHost.phone.includes('X')){
-    alert(`Please configure the WhatsApp number for ${activeHost.label} in HOST_CONTACTS before using this invitation link.`);return;
-  }
-  const url='https://wa.me/'+activeHost.phone+'?text='+encodeURIComponent(msg);window.open(url,'_blank','noopener,noreferrer');
+  const url='https://wa.me/'+RSVP_WHATSAPP_NUMBER+'?text='+encodeURIComponent(msg);
+  window.open(url,'_blank','noopener,noreferrer');
 });
 
 // A gentle generated welcome melody; playback begins only after the guest taps the control.
